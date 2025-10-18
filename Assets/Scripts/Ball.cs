@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] float speed = 15f;
+    [SerializeField] public float speed = 10f;
     Rigidbody2D rb2D;
     AudioSource audioSource;
+
+    public static event System.Action<Ball> OnBallDeath;
 
     private void Awake()
     {
@@ -30,9 +32,15 @@ public class Ball : MonoBehaviour
         rb2D.simulated = false;
         rb2D.linearVelocity = Vector2.zero;
     }
-    
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         audioSource.Play();
+    }
+    
+    public void Die()
+    {
+        OnBallDeath?.Invoke(this);
+        Destroy(gameObject);
     }
 }

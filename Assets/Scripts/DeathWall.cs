@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class DeathWall : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Ball")
+        if(other.gameObject.CompareTag("Ball"))
         {
-            Destroy(other.gameObject);
+            Debug.Log("Ball hit death wall");
+            Ball ball = other.gameObject.GetComponent<Ball>();
+            BallsManager.Instance.Balls.Remove(ball);
+            ball.Die();
         }
     }
 }
