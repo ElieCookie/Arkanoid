@@ -12,6 +12,9 @@ public class UIManager : MonoBehaviour
     int currentScore = 0;
     int currentLives = 0;
     int currentHighScore = 0;
+
+    private const string HighScoreKey = "HighScore";
+
     private void Awake()
     {
         int numGameSessions = FindObjectsOfType<UIManager>().Length;
@@ -23,6 +26,12 @@ public class UIManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
+
+        // load persisted high score
+        currentHighScore = PlayerPrefs.GetInt(HighScoreKey, 0);
+        string highScoreString = currentHighScore.ToString().PadLeft(5, '0');
+        if (highScoreText != null)
+            highScoreText.text = $"HIGH SCORE:{Environment.NewLine}{highScoreString}";
 
         Block.OnBlockDestruction += OnBlockDestruction;
         BlocksManager.OnLevelLoaded += OnLevelLoaded;
@@ -59,7 +68,12 @@ public class UIManager : MonoBehaviour
         {
             currentHighScore = currentScore;
             string highScoreString = currentHighScore.ToString().PadLeft(5, '0');
-            highScoreText.text = $"HIGH SCORE:{Environment.NewLine}{highScoreString}";
+            if (highScoreText != null)
+                highScoreText.text = $"HIGH SCORE:{Environment.NewLine}{highScoreString}";
+
+            // persist new high score
+            PlayerPrefs.SetInt(HighScoreKey, currentHighScore);
+            PlayerPrefs.Save();
         }
     }
 

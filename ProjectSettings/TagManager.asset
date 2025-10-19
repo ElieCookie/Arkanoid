@@ -8,6 +8,7 @@ TagManager:
   - Block
   - Ground
   - Paddle
+  - SideWall
   layers:
   - Default
   - TransparentFX

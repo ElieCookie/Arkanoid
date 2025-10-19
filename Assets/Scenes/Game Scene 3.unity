@@ -165,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 9148782588865857124, guid: c034d487165544f618e7b5045a839f52, type: 3}
   initialBallSpeed: 50
+  maxBalls: 6
 --- !u!1 &8440054
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,9 +835,9 @@ MonoBehaviour:
   - {fileID: 8635118333385474703, guid: 98f02e6d2197f43bb89ece885dbcde4c, type: 3}
   - {fileID: 469399494820503265, guid: bdba603850e3e4b3fb035a299f5421f5, type: 3}
   AvailableDebuffs:
-  - {fileID: 7664752069065212381, guid: 19d08415983494add9add4ddf0ce6b59, type: 3}
+  - {fileID: 4998531913598902240, guid: 19d08415983494add9add4ddf0ce6b59, type: 3}
   BuffChance: 20
-  DebuffChance: 25.5
+  DebuffChance: 20
 --- !u!1 &515213458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,6 +2678,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 711248602502923275, guid: afc6e1b97130f4dbfa93bbaa9517c7a0, type: 3}
+      propertyPath: m_TagString
+      value: SideWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 833084453143411301, guid: afc6e1b97130f4dbfa93bbaa9517c7a0, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 833084453143411301, guid: afc6e1b97130f4dbfa93bbaa9517c7a0, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412593800523678199, guid: afc6e1b97130f4dbfa93bbaa9517c7a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.58
+      objectReference: {fileID: 0}
     - target: {fileID: 4163877458139523118, guid: afc6e1b97130f4dbfa93bbaa9517c7a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2717,9 +2734,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6212099007545616121, guid: afc6e1b97130f4dbfa93bbaa9517c7a0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6450262243620526534, guid: afc6e1b97130f4dbfa93bbaa9517c7a0, type: 3}
       propertyPath: m_Name
       value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680330240744387732, guid: afc6e1b97130f4dbfa93bbaa9517c7a0, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477891725304899827, guid: afc6e1b97130f4dbfa93bbaa9517c7a0, type: 3}
+      propertyPath: m_TagString
+      value: SideWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887392833176671891, guid: afc6e1b97130f4dbfa93bbaa9517c7a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

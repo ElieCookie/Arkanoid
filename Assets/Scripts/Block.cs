@@ -15,7 +15,6 @@ public class Block : MonoBehaviour
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
-        //sr.sprite = BlocksManager.Instance.BlockSprites[hitPoints - 1];
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -58,7 +57,7 @@ public class Block : MonoBehaviour
             alreadySpawned = true;
             Collectable newBuff = SpawnCollectable(true);
         }
-        if (buffSpawnChance <= CollectablesManager.Instance.BuffChance && !alreadySpawned)
+        if (deBuffSpawnChance <= CollectablesManager.Instance.DebuffChance && !alreadySpawned)
         {
             Collectable newDeBuff = SpawnCollectable(false);
         }
@@ -89,6 +88,7 @@ public class Block : MonoBehaviour
         sr.sprite = sprite;
         sr.color = color;
         this.hitPoints = hitPoints;
+        PointsPerBlock = hitPoints * 10;
     }
 }
     

@@ -12,6 +12,8 @@ public class Multiball : Collectable
 
         foreach (Ball ball in existingBalls)
         {
+            if (BallsManager.Instance.Balls.Count >= BallsManager.Instance.maxBalls)
+                break;
             Rigidbody2D originalRb = ball.GetComponent<Rigidbody2D>();
 
             for (int i = 0; i < 2; i++)

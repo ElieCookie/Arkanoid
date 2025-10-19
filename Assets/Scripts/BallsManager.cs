@@ -5,6 +5,7 @@ public class BallsManager : MonoBehaviour
 {
     [SerializeField] Ball ballPrefab;
     [SerializeField] public float initialBallSpeed = 100f;
+    [SerializeField] public int maxBalls = 6;
     public static BallsManager Instance { get; private set; }
     public List<Ball> Balls { get; set; }
 
